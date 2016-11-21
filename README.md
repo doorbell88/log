@@ -1,5 +1,5 @@
 # Log
-A bash script for adding timestamped entries to a running log text document
+A bash script for adding timestamped entries to a text document that serves as a running log
 
     usage: log [[[-f file ] [-i]] | [-h]]
     

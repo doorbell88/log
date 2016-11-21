@@ -1,7 +1,7 @@
 # Log
 A bash script for adding timestamped entries to a running log text document
 
-usage: log [[[-f file ] [-i]] | [-h]]
+    usage: log [[[-f file ] [-i]] | [-h]]
     
     -f | --file             Allows you to specify a log file when running the script
     

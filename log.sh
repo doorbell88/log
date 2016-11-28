@@ -232,7 +232,7 @@ cd $LOG_FOLDER
 
 
 interactive=0
-filename=$LOG_FOLDER/log.txt
+filename="$LOG_FOLDER/log.txt"
 # filename=~/Desktop/Programming/Scripting/Logs/log.txt
 
 while [ "$1" != "" ]; do
@@ -282,6 +282,19 @@ if [ $interactive = 1 ]; then
 				echo "exiting program"
 				exit 1
 			fi
+
+		# Log file (in LOG_FOLDER) already exists -- add to log?
+		elif [ -f "$LOG_FOLDER/$response" ]; then
+			echo -en "\nLog already exists.  Add to log? (y/n)  >  "
+			read add
+			if [ "$add" = "y" ]; then
+				filename="$LOG_FOLDER/$response"	# add log entry to the filename specified
+				# get_log_title		# get existing log title
+			else
+				echo "exiting program"
+				exit 1
+			fi
+
 
 		# Does not yet exist -- create and begin log?
 		else

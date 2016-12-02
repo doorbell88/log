@@ -44,10 +44,6 @@ clean_up() {
 }
 
 exit_prompt() {
-	# kill -SIGTERM	# [ctrl+D] to save the cat for $body 
-	# clear
-	# echo $body
-
 	tput cub 2		# Move cursor back 2 spaces (to get rid of "^C" output)
 	tput setaf $warning_color
 	echo -en "  \nAre you sure you want to exit without saving entry? (y/n)  >  "
@@ -60,9 +56,8 @@ exit_prompt() {
 		clear
 		tput sgr0
 
-		# body=$body
+		# display the current log again
 		get_body
-		# continue
 	fi
 }
 
@@ -250,8 +245,8 @@ while [ "$1" != "" ]; do
 								exit
 								;;
 
-		* )						usage
-								exit
+		# * )						usage
+		#    						exit
 	esac
 	shift
 done
